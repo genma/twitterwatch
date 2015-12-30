@@ -51,7 +51,7 @@ class Main(object):
         # get the 20 last tweets
         lasttweets = self.api.user_timeline()
         # see if the last tweet of twitter api was sent already
-        lasttweet = lasttweets[-1]
+        lasttweet = lasttweets[0]
         # find the date of the last tweet
         lastactiondate = lasttweet.created_at
         # get the current date
