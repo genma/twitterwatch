@@ -1,0 +1,4 @@
+*.swp
+twitterwatch/__pycache__/
+/twitterwatch.ini
+.coverage
