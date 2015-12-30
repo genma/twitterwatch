@@ -24,7 +24,6 @@ Twitterwatch watches a user timeline in order to check if tweets are tweeted on 
 * Create or modify twitterwatch.ini file in order to configure Twitterwatch:
 
         [twitter]
-        screen_name_of_the_user_to_watch=journalduhacker
         consumer_key=ml9jaiBnf3pmU9uIrKNIxAr3v
         consumer_secret=8Cmljklzerkhfer4hlj3ljl2hfvc123rezrfsdctpokaelzerp
         access_token=213416590-jgJnrJG5gz132nzerl5zerwi0ahmnwkfJFN9nr3j
@@ -32,6 +31,11 @@ Twitterwatch watches a user timeline in order to check if tweets are tweeted on 
 
         [schedule]
         check_interval=60
+
+        [mail]
+        host=localhost
+        from=admin@myserver.org
+        to=foo@mylaptop.org
 
 * Launch Twitterwatch
 

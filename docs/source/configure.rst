@@ -15,6 +15,11 @@ In order to configure Twitterwatch, you need to create a twitterwatch.ini file (
     [schedule]
     check_interval=60
 
+    [mail]
+    host=localhost
+    from=admin@myserver.org
+    to=foo@mylaptop.org
+
 For the [twitter] section:
 
 - screen_name_of_the_user_to_watch: the screen_name of the user to watch (in @carl_chenet, it's carl_chenet)
@@ -22,3 +27,9 @@ For the [twitter] section:
 - consumer_secret: the Twitter consumer secret key (see your apps.twitter.com webpage)
 - access_token: the Twitter access token key (see your apps.twitter.com webpage)
 - access_token_secret: the Twitter access token secret key (see your apps.twitter.com webpage)
+
+For the [mail] section:
+
+- host: the name of the mail server to connect with SMTP
+- from: mail address sending the email alerts
+- to: mail address of the recipient of the email alerts
