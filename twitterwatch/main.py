@@ -24,6 +24,7 @@ import tweepy
 
 from twitterwatch.cliparse import CliParse
 from twitterwatch.confparse import ConfParse
+from twitterwatch.emailwarning import EmailWarning
 
 class Main(object):
     '''Main class'''
@@ -35,7 +36,6 @@ class Main(object):
         # read the configuration file
         cfgparse = ConfParse(pathtoconf)
         self.cfgvalues = cfgparse.confvalues
-        self.alert = False
 
         # activate the twitter api
         self.auth = tweepy.OAuthHandler(self.cfgvalues['consumer_key'],
@@ -59,6 +59,8 @@ class Main(object):
         # get the interval between two checks
         pause = datetime.timedelta(minutes=self.cfgvalues['check_interval'])
         if (currentdate - pause) > lastactiondate:
+            user = self.api.me().screen_name
             # warn
-            self.alert = True
-            print('Twitter stream has stopped since {}'.format(lastactiondate.strftime("%d/%m/%Y - %H:%M:%S")))
+            warning = 'Twitter stream of {} has stopped since {}'.format(user, lastactiondate.strftime("%d/%m/%Y - %H:%M:%S")) 
+            emailwarn = EmailWarning(self.cfgvalues, warning, user)
+            print(warning)

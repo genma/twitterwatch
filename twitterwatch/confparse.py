@@ -27,6 +27,9 @@ class ConfParse(object):
         self.consumer_secret = ''
         self.check_interval = 60
         self.pathtoconf = pathtoconf
+        self.mailhost = ''
+        self.mailfrom = ''
+        self.mailto = ''
         self.main()
 
     def main(self):
@@ -45,6 +48,11 @@ class ConfParse(object):
                 section='schedule'
                 if config.has_section(section):
                     self.check_interval= config.get(section, 'check_interval')
+                section='mail'
+                if config.has_section(section):
+                    self.mailhost = config.get(section, 'host')
+                    self.mailfrom = config.get(section, 'from')
+                    self.mailto = config.get(section, 'to')
 
         except (configparser.Error, IOError, OSError) as err:
             print(err)
@@ -62,4 +70,7 @@ class ConfParse(object):
                 'consumer_secret': self.consumer_secret,
                 'access_token': self.access_token,
                 'access_token_secret': self.access_token_secret,
-                'check_interval': self.check_interval}
+                'check_interval': self.check_interval,
+                'mailhost': self.mailhost,
+                'mailfrom': self.mailfrom,
+                'mailto': self.mailto}
