@@ -21,7 +21,6 @@ In order to configure Twitterwatch, you need to create a twitterwatch.ini file (
 
 For the [twitter] section:
 
-- screen_name_of_the_user_to_watch: the screen_name of the user to watch (in @carl_chenet, it's carl_chenet)
 - consumer_key: the Twitter consumer key (see your apps.twitter.com webpage)
 - consumer_secret: the Twitter consumer secret key (see your apps.twitter.com webpage)
 - access_token: the Twitter access token key (see your apps.twitter.com webpage)
