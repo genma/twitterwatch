@@ -6,7 +6,6 @@ As a prerequisite to use Twitterwatch, you need a Twitter app. Log in Twitter, g
 In order to configure Twitterwatch, you need to create a twitterwatch.ini file (or any name you prefer, finishing with the extension .ini) with the following parameters::
 
     [twitter]
-    screen_name_of_the_user_to_watch=journalduhacker
     consumer_key=ml9jaiBnf3pmU9uIrKNIxAr3v
     consumer_secret=8Cmljklzerkhfer4hlj3ljl2hfvc123rezrfsdctpokaelzerp
     access_token=213416590-jgJnrJG5gz132nzerl5zerwi0ahmnwkfJFN9nr3j
